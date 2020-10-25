@@ -1,12 +1,12 @@
 package ru.itsjava.object;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@Setter
+@Getter
 
 
 public class Dog {

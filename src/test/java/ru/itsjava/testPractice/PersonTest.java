@@ -10,6 +10,7 @@ public class PersonTest {
     public static final String DEFAULT_NAME = "Ivan";
     public static final int DEFAULT_AGE = 17;
     public static final int NEW_AGE = 21;
+    public static int DIFFERENCE;
 
     @DisplayName("Корректно создаваться конструктором")
     @Test
@@ -35,5 +36,14 @@ public class PersonTest {
         assertEquals(person.takeBeer(), false);
         person.setAge(NEW_AGE);
         assertEquals(person.takeBeer(), true);
+    }
+
+    @DisplayName(" корректно выполнять birthday")
+    @Test
+    public void shouldHaveCorrectBirthday() {
+        Person person = new Person(DEFAULT_NAME, DEFAULT_AGE);
+        person.birthday();
+        DIFFERENCE = person.getAge() - DEFAULT_AGE;
+        assertEquals(DIFFERENCE, 1);
     }
 }

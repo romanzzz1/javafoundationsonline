@@ -58,5 +58,9 @@ public class ArrayListPractice {
         System.out.println("watchesList.get(3) = " + watchesList.get(3));
         watchesList.add(0, vitaliyWatch);
         System.out.println("watchesList = " + watchesList);
+
+        watchesList.clear();
+        System.out.println("па");
+        System.out.println(watchesList);
     }
 }

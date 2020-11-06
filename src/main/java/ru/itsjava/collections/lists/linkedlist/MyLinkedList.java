@@ -3,13 +3,14 @@ package ru.itsjava.collections.lists.linkedlist;
 public class MyLinkedList {
 
     private Node head;
-    private int realSize;
+    private int realSize = 0;
 
     public int size() {
-        Node bakaNode = head;
-            while (bakaNode.getNext() != null) {
-                realSize++;
-            }
+        Node curNode = head;
+        while (curNode != null) {
+            curNode = curNode.getNext();
+            realSize++;
+        }
         return realSize;
     }
 
@@ -23,7 +24,7 @@ public class MyLinkedList {
 
     public boolean contains(Object o) {
         Node curNode = head;
-        while (curNode.getNext() != null) {
+        while (curNode != null) {
             if (curNode.getValue().equals(o)) {
                 return true;
             } else {
@@ -44,7 +45,7 @@ public class MyLinkedList {
             }
             curNode.setNext(resNode);
         }
-            return true;
+        return true;
     }
 
     public boolean remove(Object o) {

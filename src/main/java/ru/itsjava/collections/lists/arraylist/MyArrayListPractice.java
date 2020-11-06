@@ -14,15 +14,20 @@ public class MyArrayListPractice {
         list.add("Пока");
         list.add("Пока");
         list.add("Пока");
+        list.add("Привет");
         list.add("Пока");
-        list.add("Пока");
-        System.out.println("list.size() = " + list.size());
-        System.out.println("list.toString() = " + list.toString());
-        System.out.println("list.isEmpty() = " + list.isEmpty());
-        System.out.println("list.contains(\"Пока\") = " + list.contains("Пока"));
-        System.out.println("list.contains(\"Привет\") = " + list.contains("Привет"));
-        System.out.println("list.contains(\"Um\") = " + list.contains("Um"));
-        list.clear();
-        System.out.println(list.toString());
+
+        System.out.println(list.size());
+        System.out.println(list);
+        list.remove("Привет");
+        System.out.println(list);
+        System.out.println(list.size());
+        list.remove("Пока");
+        System.out.println(list);
+
+        list.add("До_свидания");
+        System.out.println(list);
+        System.out.println(list.indexOf("Привет"));
+        System.out.println(list);
     }
 }

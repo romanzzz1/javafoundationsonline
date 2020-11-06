@@ -44,11 +44,29 @@ public class MyArrayList {
 
 
     public boolean remove(Object o) {
-        return false;
+        int delIndex = -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] != null && array[i].equals(o)) {
+                delIndex = i;
+                break;
+            }
+        }
+
+        if (array.length - 1 - delIndex >= 0) {
+            System.arraycopy(array, delIndex + 1, array, delIndex, array.length - 1 - delIndex);
+        }
+        if (delIndex == -1) {
+            return false;
+        } else {
+            realSize--;
+            return true;
+        }
     }
 
+
     public void clear() {
-        Object[] resArray = new Object[array.length];
+        realSize = 0;
+        Object[] resArray = new Object[realSize];
         array = resArray;
     }
 
@@ -64,8 +82,28 @@ public class MyArrayList {
 
     }
 
-    public Object remove(int i) {
-        return null;
+    public Object remove(int index2) {
+        checkIndex(index2);
+        Object resElement = array[index2];
+        for (int i = 0; i < array.length - 1; i++) {
+            array[i] = array[i + 1];
+        }
+        realSize--;
+        return resElement;
+    }
+
+    private void checkIndex(int index1) {
+        if (!isCorrectIndex(index1)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс!");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if (index > -1 && index < realSize) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int indexOf(Object o) {

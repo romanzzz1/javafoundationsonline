@@ -53,23 +53,88 @@ public class MyLinkedList {
     }
 
     public void clear() {
-
+        Node curNode = head;
+        while (head != null) {
+            head = head.getNext();
+            curNode = null;
+        }
     }
 
-    public Object get(int i) {
-        return null;
+    public Object get(int index) {
+        checkIndex(index);
+        Object resValue;
+        while (index != 0) {
+            head = head.getNext();
+            index--;
+        }
+        resValue = head.getValue();
+        return resValue;
     }
 
-    public Object set(int i, Object o) {
-        return null;
+    public Object set(int index, Object element) {
+        checkIndex(index);
+        Node curNode = head;
+
+
+        if (head.getNext() == null) {
+            Object curValue = head.getValue();
+        }
+
+        while (index != 0) {
+            curNode = curNode.getNext();
+            index--;
+        }
+        Object curValue = head.getValue();
+        return curValue;
     }
 
     public void add(int i, Object o) {
 
     }
 
-    public Object remove(int i) {
-        return null;
+    public Object remove(int index) {
+        checkIndex(index);
+        if (index == 0) {
+            Object resValue = head.getValue();
+            if (head.getNext() == null) {
+                head = null;
+            } else {
+                head = head.getNext();
+            }
+            return resValue;
+        }
+        Node curNode = head;
+        Node prevNode = head;
+        int count = 0;
+        while ((curNode = curNode.getNext()) != null) {
+            count++;
+            if (count == index) {
+                break;
+            }
+            prevNode = prevNode.getNext();
+        }
+        Object resValue = curNode.getValue();
+        if (curNode.getNext() == null) {
+            curNode.setNext(null);
+        } else {
+            prevNode.setNext(curNode.getNext());
+            curNode.setNext(null);
+        }
+        return resValue;
+    }
+
+    private void checkIndex(int index1) {
+        if (!isCorrectIndex(index1)) {
+            throw new ArrayIndexOutOfBoundsException("Некорректный индекс!");
+        }
+    }
+
+    private boolean isCorrectIndex(int index) {
+        if (index > -1 && index < realSize) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public int indexOf(Object o) {

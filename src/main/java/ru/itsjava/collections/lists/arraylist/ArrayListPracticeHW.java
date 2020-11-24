@@ -1,6 +1,4 @@
-package ru.itsjava.collections.lists;
-
-import ru.itsjava.interfaces.Man;
+package ru.itsjava.collections.lists.arraylist;
 
 import java.util.ArrayList;
 import java.util.Arrays;

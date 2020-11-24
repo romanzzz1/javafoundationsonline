@@ -1,4 +1,4 @@
-package ru.itsjava.collections.lists.linkedlist;
+package ru.itsjava.collections.lists.linkedlists;
 
 public class MyLinkedList {
 

@@ -1,8 +1,7 @@
-package ru.itsjava.collections.lists;
+package ru.itsjava.collections.lists.arraylist;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @AllArgsConstructor
 @Data

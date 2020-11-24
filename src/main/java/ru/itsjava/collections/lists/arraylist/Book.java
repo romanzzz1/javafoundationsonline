@@ -1,4 +1,4 @@
-package ru.itsjava.collections.lists;
+package ru.itsjava.collections.lists.arraylist;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;

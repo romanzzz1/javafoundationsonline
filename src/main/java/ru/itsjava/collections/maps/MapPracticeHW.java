@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MapPracticeHW {
     public static void main(String[] args) {
- // 0
+        // 0
         Map<Man, Fruit> fruits = new HashMap<>();
 
         Man korolev = new Man("Королёв");
@@ -19,26 +19,31 @@ public class MapPracticeHW {
         fruits.put(tarasov, apple);
         fruits.put(kalinin, coconut);
 
-// 1
+        // 1
         System.out.println(fruits.get(tarasov));
         System.out.println(fruits.get(kalinin));
         System.out.println(fruits.get(korolev));
 
- //3
+        // 2
+        Map<Man, Fruit> fruits2 = new HashMap<>();
+        fruits2.putAll(fruits);
 
-       fruits.remove(kalinin);
+        //3
+        fruits.remove(kalinin);
 
- //5
+        
+
+        //5
         // а
-        for (Map.Entry<Man,Fruit> pair: fruits.entrySet()) {
+        for (Map.Entry<Man, Fruit> pair : fruits.entrySet()) {
             System.out.println(pair.getKey());
         }
         // б
-        for (Map.Entry<Man,Fruit> pair: fruits.entrySet()) {
+        for (Map.Entry<Man, Fruit> pair : fruits.entrySet()) {
             System.out.println(pair.getValue());
         }
         // в
-        for (Map.Entry<Man,Fruit> pair: fruits.entrySet()) {
+        for (Map.Entry<Man, Fruit> pair : fruits.entrySet()) {
             System.out.println(pair.getKey() + " : " + pair.getValue());
         }
 
